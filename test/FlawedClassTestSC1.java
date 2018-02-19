@@ -10,7 +10,6 @@ public class FlawedClassTestSC1 {
     @Test
     public void FullStatementCoverageDoesNotFindFault() {
         FlawedClass flawed = new FlawedClass();
-        flawed.flawedMethod1(-1);
         flawed.flawedMethod1(10);
     }
 
@@ -18,6 +17,5 @@ public class FlawedClassTestSC1 {
     public void FullStatementCoverageDoesFindFault() {
         FlawedClass flawed = new FlawedClass();
         flawed.flawedMethod1(0);
-        flawed.flawedMethod1(10);
     }
 }
