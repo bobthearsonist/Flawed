@@ -43,5 +43,37 @@ public class FlawedClass {
          */
     }
 
-    
+    public void flawedMethod3()
+    {
+        /*
+        It is not possible.
+
+        If you execute a branch you must execute the statements in the branch. This would imply that there would be at least 1 statement coverage test that would not reveal the fault.
+
+        Note that you could certainly have code where 100% branch coverage does not reveal the fault, but SOME 100% statement coverage suites reveal the fault.
+        */
+    }
+
+    public boolean flawedMethod4 (boolean a, boolean b)
+    {
+        int x = 2;
+        int y = 6;
+        if(a)
+            x = 4;
+        else
+            y = y / x;
+        if(b)
+            x -= 1;
+        else
+            x += 1;
+        return ((2/(y-x)) >= 1);
+    }
+// | a | b |output|
+// ================
+// | T | T |   F   |
+// | T | F |   T   |
+// | F | T |   T   |
+// | F | F |   E   |
+// ================
+// Coverage required: statement coverage
 }
